@@ -12,4 +12,4 @@
 2. 点击上方Window -> Examples -> Robotics Examples，下方栏中找到Robot Examples
 3. 例如`my_hello_world`项目，在左侧点击`MY_USE_CASES`，点击中间`My Hello World`，点击右侧`LOAD`按钮即可
 
-每次修改项目代码保存后，Robotics Examples中立马就会更新，我们只需要再重新点击`LOAD`即可看到修改后的代码
+每次修改项目代码保存后，Robotics Examples中立马就会更新（热重载, hot-reload），我们只需要再重新点击`LOAD`即可看到修改后的代码

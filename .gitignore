@@ -1,3 +1,4 @@
 .vscode
 __pycache__
 interactive/extension.toml
+test*
