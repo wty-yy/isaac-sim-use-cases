@@ -33,3 +33,10 @@ code .
 本启动方法基于已经启动的一个UI界面，并通过该界面启动最新的脚本，可用于代码调试、机器人仿真测试
 
 使用`isaacsim.examples.interactive`插件进行编码，无需每次重启IsaacSim UI，点击LOAD按钮即可加载最新代码(hot-reload)，[使用方法](./interactive/README.md)
+
+## USD Demos
+| File | Info | Thumbs |
+| - | - | - |
+| [environment_setup.usd](./usd_demos/environment_setup.usd) | [官方教程Environment Setup](https://docs.isaacsim.omniverse.nvidia.com/latest/gui/tutorial_intro_environment_setup.html) | ![environment_setup.usd.png](./usd_demos/.thumbs/256x256/environment_setup.usd.png) |
+| [revolute_joint.usd](./usd_demos/revolute_joint.usd) | 测试RevoluteJoint相对参考系 | ![revolute_joint.usd.png](./usd_demos/.thumbs/256x256/revolute_joint.usd.png) |
+| [mock_robot.usd](./usd_demos/mock_robot.usd) | [官方教程Assemble a Simple Robot](https://docs.isaacsim.omniverse.nvidia.com/latest/gui/tutorial_gui_simple_robot.html) | ![mock_robot.usd.png](./usd_demos/.thumbs/256x256/mock_robot.usd.png) |
