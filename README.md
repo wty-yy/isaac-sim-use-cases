@@ -34,6 +34,11 @@ code .
 
 使用`isaacsim.examples.interactive`插件进行编码，无需每次重启IsaacSim UI，点击LOAD按钮即可加载最新代码(hot-reload)，[使用方法](./interactive/README.md)
 
+| File | Info |
+| - | - |
+| [hello_world.py](./interactive/my_hello_world/hello_world.py) | 添加Cube，参考[Hello World](https://docs.isaacsim.omniverse.nvidia.com/latest/core_api_tutorials/tutorial_core_hello_world.html) |
+| [hello_jetbot.py](./interactive/my_hello_world/hello_jetbot.py) | 添加Jetbot及Controller，参考[Hello Robot](https://docs.isaacsim.omniverse.nvidia.com/latest/core_api_tutorials/tutorial_core_hello_robot.html) |
+
 ## USD Demos
 | File | Info | Thumbs |
 | - | - | - |

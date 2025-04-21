@@ -9,3 +9,6 @@
 
 from isaacsim.examples.interactive.my_hello_world.hello_world import MyHelloWorld
 from isaacsim.examples.interactive.my_hello_world.hello_world_extension import MyHelloWorldExtension
+
+from isaacsim.examples.interactive.my_hello_world.hello_jetbot import MyHelloJetbot
+from isaacsim.examples.interactive.my_hello_world.hello_jetbot_extension import MyHelloJetbotExtension
