@@ -12,3 +12,12 @@ from isaacsim.examples.interactive.my_hello_world.hello_world_extension import M
 
 from isaacsim.examples.interactive.my_hello_world.hello_jetbot import MyHelloJetbot
 from isaacsim.examples.interactive.my_hello_world.hello_jetbot_extension import MyHelloJetbotExtension
+
+from isaacsim.examples.interactive.my_hello_world.franka_pick_and_place import FrankaPickAndPlace
+from isaacsim.examples.interactive.my_hello_world.franka_pick_and_place_extension import FrankaPickAndPlaceExtension
+
+from isaacsim.examples.interactive.my_hello_world.replicator_demos.replicator_light import ReplicatorLightDemo
+from isaacsim.examples.interactive.my_hello_world.replicator_demos.replicator_light_extension import ReplicatorLightDemoExtension
+
+from isaacsim.examples.interactive.my_hello_world.pxr_demos.pxr_demo import PXRDemo
+from isaacsim.examples.interactive.my_hello_world.pxr_demos.pxr_demo_extension import PXRDemoExtension

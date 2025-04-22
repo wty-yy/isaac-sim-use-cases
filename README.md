@@ -38,6 +38,8 @@ code .
 | - | - |
 | [hello_world.py](./interactive/my_hello_world/hello_world.py) | 添加Cube，参考[Hello World](https://docs.isaacsim.omniverse.nvidia.com/latest/core_api_tutorials/tutorial_core_hello_world.html) |
 | [hello_jetbot.py](./interactive/my_hello_world/hello_jetbot.py) | 添加Jetbot及Controller，参考[Hello Robot](https://docs.isaacsim.omniverse.nvidia.com/latest/core_api_tutorials/tutorial_core_hello_robot.html) |
+| [franka_pick_and_place.py](./interactive/my_hello_world/franka_pick_and_place.py) | 添加Franka及PickPlaceController，参考[Adding a Manipulator Robot](https://docs.isaacsim.omniverse.nvidia.com/latest/core_api_tutorials/tutorial_core_adding_manipulator.html) |
+| [pxr_demos/pxr_demo.py](./interactive/my_hello_world/pxr_demos/pxr_demo.py) | 使用pxr库添加Light, Plane, Cube |
 
 ## USD Demos
 | File | Info | Thumbs |
