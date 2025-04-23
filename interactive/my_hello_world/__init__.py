@@ -21,3 +21,6 @@ from isaacsim.examples.interactive.my_hello_world.replicator_demos.replicator_li
 
 from isaacsim.examples.interactive.my_hello_world.pxr_demos.pxr_demo import PXRDemo
 from isaacsim.examples.interactive.my_hello_world.pxr_demos.pxr_demo_extension import PXRDemoExtension
+
+from isaacsim.examples.interactive.my_hello_world.cube_split.cube_split import CubeSplit
+from isaacsim.examples.interactive.my_hello_world.cube_split.cube_split_extension import CubeSplitExtension
