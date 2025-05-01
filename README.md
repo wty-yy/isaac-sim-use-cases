@@ -40,6 +40,7 @@ code .
 | [hello_jetbot.py](./interactive/my_hello_world/hello_jetbot.py) | 添加Jetbot及Controller，参考[Hello Robot](https://docs.isaacsim.omniverse.nvidia.com/latest/core_api_tutorials/tutorial_core_hello_robot.html) |
 | [franka_pick_and_place.py](./interactive/my_hello_world/franka_pick_and_place.py) | 添加Franka及PickPlaceController，参考[Adding a Manipulator Robot](https://docs.isaacsim.omniverse.nvidia.com/latest/core_api_tutorials/tutorial_core_adding_manipulator.html) |
 | [pxr_demos/pxr_demo.py](./interactive/my_hello_world/pxr_demos/pxr_demo.py) | 使用pxr库添加Light, Plane, Cube |
+| [cube_split/cube_split.py](./interactive/my_hello_world/cube_split/cube_split.py) | 使用camera记录生成的环形cube飞散的效果 ![cube_split_circle](./assets/cube_split_circle.webp) |
 
 ## USD Demos
 | File | Info | Thumbs |

@@ -1,3 +1,11 @@
+"""
+How to use:
+1. Open GUI -> Windows -> Examples -> Robotics Examples -> MY_USE_CASES -> Cube Split
+2. Click LOAD on right
+3. After loading assets, U can click forth button on left-top of the viewport, change view from Perspective to cameras>camera
+4. Click Play, when finish recording click stop button
+5. Checkout recording at $HOME/Videos/isaacsim/cube_split_{TIMETAG}.avi
+"""
 import omni.usd
 import numpy as np
 from isaacsim.core.api.world import World
@@ -12,10 +20,11 @@ from isaacsim.sensors.camera import Camera
 import isaacsim.core.utils.numpy.rotations as rot_utils
 import os, cv2
 from pathlib import Path
+import time
 
 path_video = Path(f"{os.getenv('HOME')}/Videos/isaacsim")
 path_video.mkdir(exist_ok=True)
-path_video /= "cube_split.avi"
+path_video /= f"cube_split_{time.strftime(r'%Y%m%d_%H%M%S')}.avi"
 
 def get_spatial_sphere_vectors(y_delta_degree=20, y_num=None, z_delta_degree=20, z_num=None):
     top = np.array([0, 0, 1])
@@ -56,8 +65,6 @@ class SingleCube:
             linear_velocity=np.array(line_velocity)
         )
         self.scene.add(self.cube)
-        self.create_time = self.world.current_time
-        self.timeline = omni.timeline.get_timeline_interface()
     
 class CubeSplit(BaseSample):
     def __init__(self) -> None:
@@ -86,9 +93,15 @@ class CubeSplit(BaseSample):
         # light.CreateColorAttr(Gf.Vec3f(1, 182/255, 193/255))
 
         ts = np.linspace(0, 2 * np.pi, 15)
-        ys = 16 * np.sin(ts) ** 3
-        zs = 13 * np.cos(ts) - 5 * np.cos(2*ts) - 2 * np.cos(3*ts) - np.cos(4*ts)
-        zs -= zs.min()
+        # Graph1: Heart
+        # ys = 16 * np.sin(ts) ** 3
+        # zs = 13 * np.cos(ts) - 5 * np.cos(2*ts) - 2 * np.cos(3*ts) - np.cos(4*ts)
+
+        # Graph2: Circle
+        ys = 12 * np.sin(ts)
+        zs = 12 * np.cos(ts)
+
+        zs -= zs.min() - 2
         base_vec = get_spatial_sphere_vectors(y_delta_degree=45, z_delta_degree=90)
         for (y, z) in zip(ys, zs):
             pos = np.array([0, y, z])
@@ -104,7 +117,7 @@ class CubeSplit(BaseSample):
         )
 
         print(f"[INFO] write video to {path_video}")
-        self.writer = cv2.VideoWriter(str(path_video), cv2.VideoWriter_fourcc(*'XVID'), fps=fps, frameSize=(width, height))
+        self.writer = cv2.VideoWriter(str(path_video), cv2.VideoWriter_fourcc(*'XVID'), fps=60, frameSize=(width, height))
 
         return
     
@@ -131,18 +144,21 @@ class CubeSplit(BaseSample):
 
     def render_step(self, dt):
         img = self.camera.get_rgb()
-        print(img.shape)
+        # img = self.camera.get_current_frame()['rgba'][...,:3].astype(np.uint8)
+        # print(img.shape, img.dtype)
         if not len(img): return
         # cv2.imwrite("/home/yy/Programs/isaac-sim-standalone@4.5.0/isaac-sim-use-cases/interactive/my_hello_world/cube_split/1.png", img[..., ::-1])
         if self.writer:
             self.writer.write(img[...,::-1])
+        if self.world.is_stopped() and self.writer is not None:
+            print("[INFO] Release video recording!")
+            self.writer.release()
+            self.writer = None
         # plt.imshow(self.camera.get_rgb())
         # plt.savefig(, dpi=100)
         # plt.close()
 
     async def setup_pre_reset(self):
-        self.writer.release()
-        self.writer = None
         return
 
     async def setup_post_reset(self):
